@@ -35,19 +35,8 @@ public abstract class Operacion {
     public abstract String getNombreOperacion();
 
     public void mostrarResultado() {
-        try {
-            double resultado = calcular();
-            if (Double.isNaN(resultado) || Double.isInfinite(resultado)) {
-                throw new ArithmeticException("El resultado no es valido");
-            }
-            System.out.println("El resultado de la " + getNombreOperacion() + " es:" + resultado);
-        } catch (ArithmeticException e) {
-            System.out.println("Error: " + e.getMessage());
-        } catch (Exception e) {
-            System.out.println("Error al calcular la operacion: " + e.getMessage());
-        } finally {
-            System.out.println("Operacion finalizada");
-        }
+        double resultado = calcular();
+        System.out.println("El resultado de la " + getNombreOperacion() + " es:" + resultado);
     }
 
 }
